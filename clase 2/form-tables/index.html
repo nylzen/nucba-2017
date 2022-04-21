@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablas y formularios</title>
+  </head>
+  <body>
+    <h2>Tablas</h2>
+    <table>
+      <!-- Fila uno con el tr-->
+      <tr>
+        <!-- Definimos los titulos de esas celdas -->
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miercoles</th>
+      </tr>
+      <!-- Fila dos con el tr -->
+      <tr>
+        <!-- Definios la data de esa celda -->
+        <td>19.30hs</td>
+        <td></td>
+        <td>19.30hs</td>
+      </tr>
+      <!-- Fila tres -->
+      <tr>
+        <td>09.30hs</td>
+        <td>No se</td>
+        <td>14.57hs</td>
+      </tr>
+    </table>
+
+    <!-- Formularios -->
+    <h2>Formularios</h2>
+    <form>
+      <!-- Label texto para el input, input el input -->
+      <div>
+        <!-- Tipo text: Por defecto -->
+        <!-- El atributo for tiene que tener el mismo nombre que el id del input que queremos conectar -->
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre" />
+      </div>
+      <div>
+        <!-- Tipo email -->
+        <label for="email">Email</label>
+        <input type="email" placeholder="Ingresa tu email" id="email" />
+      </div>
+      <div>
+        <!-- Tipo number -->
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" required placeholder="Ingresa tu edad" />
+      </div>
+
+      <div>
+        <!-- Tipo Password -->
+        <label for="pepito">Password</label>
+        <input type="password" id="pepito" placeholder="Ingresa una pw" />
+      </div>
+
+      <div>
+        <!-- Tipo tel -->
+        <label for="tel">Telefono</label>
+        <input type="tel" id="tel" placeholder="Telefono" />
+      </div>
+
+      <div>
+        <!-- Tipo checkbox -->
+        <input type="checkbox" id="terminos" />
+        <label for="terminos">Aceptar terminos</label>
+      </div>
+
+      <div>
+        <!-- Tipo radio -->
+        <input type="radio" id="boca" name="equipo" />
+        <label for="boca">Boca</label>
+        <input type="radio" id="riber" name="equipo" />
+        <label for="river">River</label>
+        <input type="radio" id="huracan" name="equipo" />
+        <label for="huracan">Huracan</label>
+      </div>
+
+      <div>
+        <!-- Tipo Select -->
+        <label for="select">Jugamos?</label>
+        <select name="select" id="select">
+          <option value="piedra">Piedra</option>
+          <option value="tijera">Tijera</option>
+          <option value="papel">Papel</option>
+        </select>
+      </div>
+
+      <div>
+        <!-- Tipo Search -->
+        <label for="search">Search</label>
+        <input type="search" id="search" placeholder="Buscar..." />
+      </div>
+
+      <div>
+        <label for="mensaje">Ingresa tu mensaje</label>
+        <textarea
+          name="mensaje"
+          id="mensaje"
+          cols="30"
+          rows="10"
+          placeholder="Ingresa tu mensaje"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="ciudad">Elegi tu ciudad</label>
+        <select name="ciudad" id="ciudad">
+          <option value="buenos aires">Bsas</option>
+          <option value="nose">nose</option>
+        </select>
+      </div>
+
+      <div>
+        <!-- Tipo boton -->
+        <input type="submit" value="Holis" />
+        <!-- Tambien puede usar un boton con el atributo de type submit -->
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </body>
+</html>
