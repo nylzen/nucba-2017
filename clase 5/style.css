@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Tapestry&display=swap");
+
+/* selector {
+  propiedad: valor;
+  propiedad2: valor;
+} */
+
+/* Selector Etiqueta Universal */
+/* * {
+  border: 1px solid red;
+} */
+
+/* Selector de etiqueta */
+h1 {
+  color: mediumvioletred;
+  /* color: #1e1e1e; */
+  /* color: rgba(0, 0, 0, 0.3); */
+}
+
+/* Para utilizar clases usamos el . */
+/* .nombreClase */
+
+.titulo {
+  color: coral;
+}
+
+.otro-nombre {
+  color: darkturquoise;
+}
+
+/* Para utilizar IDs usamos el # */
+/* #nombreIdentificador */
+#el-h2 {
+  color: darkslateblue;
+}
+
+/* Pseudoclases */
+.link {
+  color: coral;
+}
+
+.link:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+/* Background */
+.container {
+  /* background-color: skyblue;
+  background-image: url("https://pbs.twimg.com/profile_images/1398347372946673672/GfHDTRWj_400x400.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
+  background-image: url("./img/messi.jpg");
+  /* height: 100vh; */
+  height: 400px;
+  background-repeat: no-repeat;
+  background-color: aquamarine;
+  background-size: cover;
+}
+
+/* p {
+  color: white;
+  background: cornflowerblue;
+} */
+
+/* ahora voy usar una clase */
+.parrafo {
+  color: white;
+  background: salmon;
+  font-size: 2rem;
+}
+
+/* Cambiar fuentes */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.otra-fuente {
+  font-family: "Tapestry", serif;
+}
+
+p {
+  font-weight: 600;
+  /* font-size: 32px; */
+  text-decoration: line-through;
+  text-align: center;
+  font-style: italic;
+  /* letter-spacing: 20px; */
+  word-spacing: 20px;
+  line-height: 32px;
+  text-transform: lowercase;
+}
+
+li {
+  list-style: none;
+}
