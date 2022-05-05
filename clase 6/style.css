@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.caja {
+  background: salmon;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border: 10px solid black;
+  display: inline-block;
+}
+
+.caja-2 {
+  background: cornflowerblue;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border: 10px solid black;
+  display: none;
+}
+/* div {
+  width: 150px; */
+/* height: 200px; */
+/* Border */
+/* border: 5px solid red; */
+/* border-width: 10px; */
+/* border-style: solid; */
+/* border-color: red; */
+/* border-bottom: 15px; */
+/* border-bottom: 1px solid red;
+  border-right: 5px dashed green;
+  border-left: 3px dotted black;
+  border-top: 10px double salmon;
+  border: 2px solid salmon;
+} */
+/** Aca vimos Overflow */
+/* div { */
+/* overflow: visible; */
+/* overflow: hidden; */
+/* overflow: scroll; */
+/* overflow: auto; */
+/* } */
+
+/** Padding */
+/* div { */
+/* padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 30px; */
+/* background-color: cornflowerblue; */
+/* Escribir padding en una sola linea */
+/* padding: 10px 30px 20px 25px; */
+/* Aplicar padding a todos los lados con un valor */
+/* padding: 20px; */
+/* Aplicar padding Verticalmente / Horizontalmente */
+/* padding: 25px 50px; */
+/* Aplicar padding Arriba / Horizontalmente / Abajo */
+/* padding: 15px 40px 5px; */
+/* Margin */
+/* Margin Funciona igual que el padding para escribirlo */
+/* margin-bottom: 30px; */
+/* margin: 20px; */
+/* margin: 30px 50px; */
+/* margin: 25px 40px 10px; */
+/* } */
+
+/* h2 {
+  display: inline;
+  background: cornflowerblue;
+}
+
+.bg {
+  background-color: peru;
+}
+
+input,
+span {
+  display: inline;
+  display: block;
+  background: red;
+} */
