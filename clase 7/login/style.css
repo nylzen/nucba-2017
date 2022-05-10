@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  /* background: #1e1e1e; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(./img/bg.jpg) no-repeat center/cover;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  gap: 20px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login img {
+  width: 150px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 20px;
+  width: 250px;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* input[type="submit"] {
+  background: #17214d;
+  color: white;
+} */
+
+.btn {
+  background: #17214d;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.login a {
+  text-decoration: none;
+  color: #1e1e1e;
+  border: 1px solid #1e1e1e;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.login a:hover {
+  background: #1e1e1e;
+  color: white;
+  transform: scale(1.2);
+
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
