@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de colores */
+:root {
+  --dark-bg: #390099;
+  --red-bg: #ff0054;
+  --font: "Poppins", sans-serif;
+  --btn-color: #202157;
+  --btn-hover: #101134;
+}
+
+body {
+  background-color: var(--dark-bg);
+  font-family: var(--font);
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 75%;
+}
+
+form label {
+  padding-bottom: 10px;
+}
+
+form input {
+  margin-bottom: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 0 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* form input[type="submit"] {
+  background: red;
+} */
+
+.btn {
+  background: var(--btn-color);
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+.login__img {
+  display: none;
+}
+
+/* Aca vienen las famosas media queries */
+@media screen and (min-width: 1000px) {
+  .login__container {
+    background: var(--red-bg);
+    max-width: 700px;
+    width: 100%;
+    border-radius: 20px;
+    min-height: 200px;
+    max-height: 300px;
+    height: 60%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 0 0 26px rgb(0, 0, 0, 0.6);
+    flex-direction: row-reverse;
+  }
+
+  .login__img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: url("./img/image\ 3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0 20px 20px 0;
+    -webkit-border-radius: 0 20px 20px 0;
+    -moz-border-radius: 0 20px 20px 0;
+    -ms-border-radius: 0 20px 20px 0;
+    -o-border-radius: 0 20px 20px 0;
+  }
+  form {
+    width: 100%;
+    height: 100%;
+    /* No aplicamos display flex porque ya lo pusimos por fuera de las media queries */
+    justify-content: center;
+    padding: 20px 60px;
+  }
+}
