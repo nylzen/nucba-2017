@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #1e1e1e;
+}
+
+.menu-button {
+  background: salmon;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 10px 0;
+  margin: 20px auto 0;
+  cursor: pointer;
+}
+
+.menu-button span {
+  width: 30px;
+  height: 4px;
+  background: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.toggle {
+  text-align: center;
+  background: salmon;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 200px;
+  margin: 20px auto;
+  display: none;
+}
+
+.toggle li {
+  list-style-type: none;
+  padding: 10px 0;
+  color: white;
+}
+
+.menu-toggle:checked ~ .toggle {
+  display: block;
+}
+
+/* Position Fixed */
+.logo-whapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.logo-whapp img {
+  width: 50px;
+}

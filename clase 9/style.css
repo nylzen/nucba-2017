@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  flex-direction: row;
+}
+
+/* Sintaxis Media Queries */
+/* @media media-type (media-feature) {
+  Aca van los estilos
+} */
+
+/* @media (media-feature) {
+  Aca van los estilos
+} */
+
+/* @media screen and (min-width: 1000px) {
+} */
+
+@media (min-width: 1000px) {
+  .container {
+    background-color: orange;
+  }
+}
+
+/* Gradientes */
+.box {
+  background: rgb(147, 200, 41);
+  background: radial-gradient(
+    rgba(147, 200, 41, 1) 0%,
+    rgba(255, 218, 99, 1) 55%,
+    rgba(255, 19, 0, 1) 100%
+  );
+  width: 200px;
+  height: 200px;
+}

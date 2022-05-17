@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  height: 100vh;
+  font-size: 4rem;
+  text-align: center;
+  background: salmon;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  background: #ccc;
+  height: 80px;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.container {
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
+}
