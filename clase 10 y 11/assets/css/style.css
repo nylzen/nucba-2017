@@ -64,6 +64,14 @@ header {
   padding: 1rem 0;
   display: none;
 }
+
+.item a {
+  color: var(--blue);
+}
+
+.item a:visited {
+  color: var(--blue);
+}
 /** Terminado el menu */
 
 /** Seccion 1 About */
@@ -324,4 +332,100 @@ footer .title {
 
 .legales {
   max-width: 280px;
+}
+
+/* Mediaqueries Desktop */
+/* @media screen and (min-width: 1024px) {} */
+@media (min-width: 1024px) {
+  /* menu */
+  .menu {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  .container-items {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+  }
+  .item {
+    display: flex;
+  }
+  .btn-container {
+    display: none;
+  }
+
+  /* Section 1 About */
+  .about-section {
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-content {
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 70%;
+  }
+
+  .about-content p {
+    text-align: left;
+    max-width: 700px;
+  }
+
+  .about-img {
+    max-width: 500px;
+    margin: 0;
+  }
+  /* Section 2  Description*/
+  .description-section {
+    padding-bottom: 0;
+  }
+  .card-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .description-section p {
+    max-width: 500px;
+  }
+  /* Section 3 Products */
+  .products-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 8rem auto 0 auto;
+    gap: 50px;
+  }
+  .product {
+    margin: 0;
+  }
+  /* Section 4 Carrito */
+  .cart-section p {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+  .cart-container {
+    max-width: 1000px;
+  }
+  /* footer */
+  .info-container {
+    display: flex;
+    gap: 80px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .info-container {
+    max-width: 800px;
+    width: 100%;
+  }
+  .contacto {
+    width: 50%;
+  }
+
+  .legales {
+    width: 50%;
+  }
 }
