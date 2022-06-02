@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Clases / Pseudo Elementos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-clases">
+        <h1>Pseudo Clases</h1>
+        <!-- Hover -->
+        <div class="hover-container yellow">
+          <h2>Hover</h2>
+          <div class="cuadrado-hover"></div>
+        </div>
+
+        <!-- Active / Link / Visited -->
+        <div class="active-link-container salmon">
+          <h2>Active - Link - Visited</h2>
+          <a href="https://www.google.com.co" target="_blank" class="active"
+            >Ir a google</a
+          >
+        </div>
+        <!-- Focus -->
+        <div class="focus-container yellow">
+          <h2>Focus</h2>
+          <input
+            type="text"
+            class="red-input"
+            placeholder="Hola voy a ser rojo"
+          />
+          <input type="text" class="blue-input" value="Hola voy a ser azul" />
+        </div>
+
+        <!-- First child -->
+        <div class="first-child-container salmon">
+          <h2>First Child</h2>
+          <div class="first">
+            <p>Este es el primero</p>
+            <p>Este es el segundo</p>
+          </div>
+        </div>
+
+        <!-- Last child -->
+        <div class="last-child-container yellow">
+          <h2>Last child</h2>
+          <div class="last">
+            <p>Este es el primero</p>
+            <p>Este es el segundo</p>
+          </div>
+        </div>
+
+        <!-- First of type -->
+        <div class="first-of-container salmon">
+          <h2>First of type</h2>
+          <div class="firstoftype">
+            <h3>Titulo 1</h3>
+            <h3>Titlo 2</h3>
+            <p>Texto complementario</p>
+            <p>Texto complementario dos</p>
+          </div>
+        </div>
+
+        <!-- nth child -->
+        <div class="nth-container yellow">
+          <h2>Nth child</h2>
+          <h3>Odd - Impares</h3>
+          <div class="first-nth">
+            <p>Texto 1</p>
+            <p>Texto 2</p>
+            <p>Texto 3</p>
+            <p>Texto 4</p>
+            <p>Texto 5</p>
+          </div>
+          <h3>Even - Pares</h3>
+          <div class="second-nth m-20">
+            <p>Texto 1</p>
+            <p>Texto 2</p>
+            <p>Texto 3</p>
+            <p>Texto 4</p>
+            <p>Texto 5</p>
+          </div>
+
+          <h3>Con Numero</h3>
+          <div class="third-nth m-20">
+            <p>Texto 1</p>
+            <p>Texto 2</p>
+            <p>Texto 3</p>
+            <p>Texto 4</p>
+            <p>Texto 5</p>
+          </div>
+
+          <h3>Numero + n</h3>
+          <div class="fourth-nth m-20">
+            <p>Texto 1</p>
+            <p>Texto 2</p>
+            <p>Texto 3</p>
+            <p>Texto 4</p>
+            <p>Texto 5</p>
+            <p>Texto 6</p>
+            <p>Texto 7</p>
+            <p>Texto 8</p>
+            <p>Texto 9</p>
+          </div>
+
+          <h3>Numero + n + numero</h3>
+          <div class="fifth-nth m-20">
+            <p>Texto 1</p>
+            <p>Texto 2</p>
+            <p>Texto 3</p>
+            <p>Texto 4</p>
+            <p>Texto 5</p>
+            <p>Texto 6</p>
+            <p>Texto 7</p>
+            <p>Texto 8</p>
+            <p>Texto 9</p>
+          </div>
+        </div>
+      </div>
+      <!-- Pseudo Elementos -->
+      <div class="elementos-container">
+        <h1>Pseudo Elementos</h1>
+        <!-- First Letter -->
+        <div class="first-letter salmon">
+          <h2>First Letter</h2>
+          <p class="f-letter">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+            corrupti.
+          </p>
+        </div>
+        <!-- First Line -->
+        <div class="first-line yellow">
+          <h2>First Line</h2>
+          <p class="f-line">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+            deserunt
+            <span>
+              officia reiciendis eum placeat harum quaerat tenetur iste,</span
+            >
+            exercitationem quibusdam.
+          </p>
+        </div>
+        <!-- Before y After -->
+        <div class="before-after-container salmon">
+          <h2>Before</h2>
+          <p class="p-before">Hola tengo un before</p>
+          <h2>After</h2>
+          <p class="p-after">Hola tengo un after</p>
+          <h2>Before y After</h2>
+          <p class="p-be-af">Hola tengo un before y un after</p>
+        </div>
+
+        <!-- Ejemplo de after + hover -->
+        <div class="tooltip yellow">
+          <h2>After y hover juntos</h2>
+          <p class="p-tooltip">
+            <span data-descr="Es un saludo">Hola</span> mi nombre es
+            <span data-descr="El profe">Nelson</span>
+          </p>
+        </div>
+
+        <!-- Placeholder -->
+        <div class="placeholder-container salmon">
+          <h2>Placeholder</h2>
+          <input
+            type="text"
+            class="input-placeholder"
+            placeholder="Soy un placeholder"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
