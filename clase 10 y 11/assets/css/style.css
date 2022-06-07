@@ -428,4 +428,83 @@ footer .title {
   .legales {
     width: 50%;
   }
+
+  /* Clase 13 - Aplicamos Pseudoelementos/clases al pedi  */
+  /* Vamos a hacer un efecto con hover + after, el efecto va a consistir que cuando pase el mouse por encima del elemento me dibuje una linea y desaparezca */
+  .item {
+    position: relative;
+    padding: 0;
+  }
+
+  .menu .item-link::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background: var(--blue);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX (0);
+    transform-origin: bottom right;
+    transition: transform 0.15s ease;
+    -webkit-transition: transform 0.15s ease;
+    -moz-transition: transform 0.15s ease;
+    -ms-transition: transform 0.15s ease;
+    -o-transition: transform 0.15s ease;
+    -webkit-transform: scaleX (0);
+    -moz-transform: scaleX (0);
+    -ms-transform: scaleX (0);
+    -o-transform: scaleX (0);
+  }
+
+  .menu .item-link:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+  }
+
+  /* Algun efectito con el hover */
+
+  .item-img:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transition: transform 1.5s ease;
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -ms-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+  }
+
+  /* Hover al btn */
+  .btn-products:hover {
+    background: #e6c23f;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  }
+  .product:nth-child(even) {
+    background: rgba(128, 128, 128, 0.165);
+  }
+
+  /* Ejemplo de scale alto para ver que pasa */
+  .btn-hero:hover {
+    transition: all 1s ease;
+    transform: translate(20px, 20px);
+    -webkit-transform: translate(20px, 90px);
+    -moz-transform: translate(20px, 90px);
+    -ms-transform: translate(20px, 90px);
+    -o-transform: translate(20px, 90px);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+  }
 }

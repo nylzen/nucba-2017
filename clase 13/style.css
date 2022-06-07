@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #131415;
+  color: white;
+  padding: 2rem;
+}
+
+.caja1 {
+  width: 200px;
+  height: 200px;
+  background-color: salmon;
+  border-radius: 1rem;
+  margin-bottom: 20px;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.caja1:hover {
+  width: 500px;
+  height: 500px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+input {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  padding: 5px;
+  background: gray;
+  width: 200px;
+}
+
+input:focus {
+  transition: all 5s ease;
+  width: 500px;
+  background: cornflowerblue;
+  color: white;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.miPrimerAnimacion {
+  width: 100px;
+  height: 100px;
+  background: greenyellow;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  /* Importante, para que una animacion funcione, necesita de un animation-name y un animation-duration */
+  animation-name: pepito;
+  animation-duration: 1s;
+
+  /* iteration count, es la cantidad de veces que se va a repetir la animacion */
+  animation-iteration-count: infinite;
+  /* timing function es la curva de la animacion */
+  animation-timing-function: ease-in;
+  /* Alternate va de 0 a 100, de 100 a 0 y asi */
+  animation-direction: alternate;
+}
+
+@keyframes pepito {
+  0% {
+    width: 100px;
+  }
+  /* 50% {
+    width: 250px;
+    background: salmon;
+  } */
+  100% {
+    width: 500px;
+  }
+}
+
+.whatsapp {
+  font-size: 5rem;
+  color: #3fc250;
+}
