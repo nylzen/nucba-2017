@@ -444,17 +444,17 @@ footer .title {
     position: absolute;
     bottom: 0;
     left: 0;
-    transform: scaleX (0);
+    transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.15s ease;
     -webkit-transition: transform 0.15s ease;
     -moz-transition: transform 0.15s ease;
     -ms-transition: transform 0.15s ease;
     -o-transition: transform 0.15s ease;
-    -webkit-transform: scaleX (0);
-    -moz-transform: scaleX (0);
-    -ms-transform: scaleX (0);
-    -o-transform: scaleX (0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
   }
 
   .menu .item-link:hover::after {
@@ -498,10 +498,10 @@ footer .title {
   .btn-hero:hover {
     transition: all 1s ease;
     transform: translate(20px, 20px);
-    -webkit-transform: translate(20px, 90px);
-    -moz-transform: translate(20px, 90px);
-    -ms-transform: translate(20px, 90px);
-    -o-transform: translate(20px, 90px);
+    -webkit-transform: translate(20px, 20px);
+    -moz-transform: translate(20px, 20px);
+    -ms-transform: translate(20px, 20px);
+    -o-transform: translate(20px, 20px);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;

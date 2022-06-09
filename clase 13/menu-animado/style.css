@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #131415;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 10vh;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+ul li {
+  list-style: none;
+  color: white;
+  font-size: 50px;
+  padding-bottom: 5px;
+  transform: translateY(-500px);
+  -webkit-transform: translateY(-500px);
+  -moz-transform: translateY(-500px);
+  -ms-transform: translateY(-500px);
+  -o-transform: translateY(-500px);
+  opacity: 0;
+}
+input {
+  display: none;
+}
+
+label {
+  position: fixed;
+  top: 5px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+label > div {
+  height: 5px;
+  width: 35px;
+  background: white;
+  margin: 5px;
+}
+
+label:hover > div {
+  background-color: purple;
+}
+
+#toggle-nav:checked ~ .container {
+  height: 100vh;
+  width: 275px;
+  background: #1a1a40;
+  z-index: 1;
+}
+
+#toggle-nav:checked ~ label {
+  left: 210px;
+}
+
+#toggle-nav:checked ~ .container ul li {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  opacity: 1;
+}
+
+/* Vamos a hacer la X con el menu */
+/* Paso 1, tenemos que agarrar el primer div que esta en el label, esto lo hacemos con nth-child(1) y lo rotamos */
+#toggle-nav:checked ~ label > div:nth-child(1) {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  margin-top: 18px;
+}
+
+/* Paso 2, tenemos que agarrar el segundo div dentro del label y ocultarlo */
+#toggle-nav:checked ~ label > div:nth-child(2) {
+  opacity: 0;
+}
+
+/* Pase 3, tenemos que agarrar el tercer div dentro del label y rotarlo */
+#toggle-nav:checked ~ label > div:nth-child(3) {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  margin-top: -20px;
+}
+
+/* Transiciones */
+ul li {
+  transition: transform 0.6s ease;
+  -webkit-transition: transform 0.6s ease;
+  -moz-transition: transform 0.6s ease;
+  -ms-transition: transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+}
+
+label {
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+label > div {
+  transition: 0.3s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+
+.content {
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+h2 {
+  font-size: 9rem;
+}
+
+p {
+  line-height: 30px;
+}
