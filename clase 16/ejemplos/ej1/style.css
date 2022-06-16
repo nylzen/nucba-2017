@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #131415;
+  color: white;
+}
+
+.container {
+  display: grid;
+  /* Tenemos que definir las columnas */
+  grid-template-columns: 200px 200px 200px;
+  /* Propiedad para separar elementos */
+  /* Quiero separar 20px entre columnas */
+  column-gap: 20px;
+  /* Quiero separar 5px entre filas */
+  row-gap: 5px;
+  /* Y si quiero lo mismo para ambos lados */
+  gap: 10px;
+
+  /* Tenemos otra forma de escribir las columnas */
+  grid-template-columns: 1fr 2fr 1fr;
+  /* Podemos usar % o rem */
+  /* grid-template-columns: 50% 20% 5%; */
+
+  /* Grid ocupa el ancho maximo de su contenedor */
+  /* max-width: 1200px; */
+  /* Con margin 0 auto centro al medio */
+  margin: 0 auto;
+  background: cornflowerblue;
+
+  grid-template-columns: repeat(2, 1fr);
+  /* Filas */
+  grid-template-rows: 1fr 1fr;
+  /* Con grid auto rows podemos decirle que todos los items nuevos que agreguemos tengan la medida que le indiquemos */
+  grid-auto-rows: 3fr;
+  height: 100vh;
+}
+
+.item {
+  background-color: crimson;
+  padding: 10px;
+}

@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #131415;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(300px, auto);
+}
+
+.container div {
+  border-radius: 10px;
+}
+
+.item:nth-child(1) {
+  background: burlywood;
+  grid-column: 1/2;
+  grid-row: 1;
+}
+.item:nth-child(2) {
+  background: crimson;
+  grid-column: 2/4;
+  grid-row: 1/3;
+  background: url("https://www.clarin.com/img/2022/06/08/todos-los-records-que-messi___JK_6NbP84_1256x620__2.jpg#1654700731539")
+    no-repeat center/cover;
+}
+.item:nth-child(3) {
+  background: greenyellow;
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+
+.item:nth-child(4) {
+  background-color: salmon;
+  grid-column: 2/4;
+}
+.item:nth-child(5) {
+  background-color: salmon;
+  grid-column: 1/3;
+}
+.item:nth-child(6) {
+  background-color: salmon;
+}

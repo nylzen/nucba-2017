@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #131415;
+  color: white;
+}
+
+.grilla {
+  display: grid;
+  grid-template-areas:
+    "nav header header"
+    "nav productos publicidad"
+    "nav servicios publicidad"
+    "nav footer footer";
+
+  grid-template-rows: 100px 1fr 1fr 75px;
+  grid-template-columns: 20% auto 15%;
+}
+
+header {
+  grid-area: header;
+  background: peru;
+}
+
+nav {
+  background: salmon;
+  grid-area: nav;
+}
+
+.productos {
+  background: crimson;
+  grid-area: productos;
+}
+
+.servicios {
+  background: greenyellow;
+  grid-area: servicios;
+}
+
+aside {
+  background: cornflowerblue;
+  grid-area: publicidad;
+}
+footer {
+  grid-area: footer;
+  background-color: sandybrown;
+}

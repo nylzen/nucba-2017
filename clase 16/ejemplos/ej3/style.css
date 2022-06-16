@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #131415;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.item {
+  background: crimson;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Grid area(shorthand para grid-column y grid-row) el primer y tercer valor es para las rows. Y el segundo y cuarto valor para las columns */
+.item:nth-child(1) {
+  /* grid-area: 2/2/4/4; */
+  grid-column: 2/4;
+  grid-row: 2/4;
+  background-color: cornflowerblue;
+}
