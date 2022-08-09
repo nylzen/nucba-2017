@@ -155,6 +155,8 @@ const productos = [
 // const idProductos = productos.map(({ nombre }) => nombre);
 // console.log(idProductos);
 
+const nombreProductos = productos.map(({ nombre }) => nombre);
+
 const peliculas = [
   {
     id: 1,
