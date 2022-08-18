@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JS - DOM II</title>
+  </head>
+  <body>
+    <h1>2.11 DOM II</h1>
+    <p>
+      En esta clase vamos a ver que son los eventos del DOM y manipularlos.Ya
+      sea cambiando estilos/cambiar clases.
+    </p>
+    <a href="#" class="btn">Ver más</a>
+    <h2>Recursos de la clase:</h2>
+    <ul>
+      <li>
+        <a
+          href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener"
+          >https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener</a
+        >
+      </li>
+    </ul>
+    <hr class="hr" />
+    <!-- Llamamos a un evento onclick y le pasamos un alert -->
+    <h3
+      onclick="alert('Na, vamos a manipular cositas desde js, no more console please')"
+    >
+      Veamos la consola 👉
+    </h3>
+
+    <!--Llamar a un alert con un escuchador de eventos desde js -->
+    <h3 id="h3Alert">Clickeame para ver que pasa</h3>
+
+    <!-- blur / focus -->
+    <hr class="hr my" />
+    <h3>Focus/Blur</h3>
+    <input id="inputBlur" placeholder="Ingresa un dato" type="text" />
+
+    <!-- change -->
+    <h3>Change</h3>
+    <input id="inputChange" placeholder="Ingresa una comida" type="text" />
+
+    <!-- Mostar y ocultar una imagen -->
+    <div class="container">
+      <h3>Mostar y ocultar con .style</h3>
+      <img src="./img/messi.webp" alt="" id="img" />
+      <div class="btns">
+        <button id="hide">Ocultar Imagen</button>
+        <button id="show">Mostrar Imagen</button>
+      </div>
+    </div>
+
+    <hr class="hr my" />
+    <!-- Mostrar y ocultar una imagen con classlist -->
+    <div class="container">
+      <h3 class="my">Mostrar y ocultar una imagen con classlist</h3>
+      <img src="./img/messi.webp" alt="" id="imgToggle" />
+      <div class="btns">
+        <button id="toggle">Mostrar/Ocultar Imagen</button>
+      </div>
+    </div>
+
+    <!-- Eventos key -->
+    <hr class="hr my" />
+    <h3>Eventos keyboard</h3>
+    <input id="keyboard" type="text" />
+    <button class="btn">Enviar</button>
+
+    <!-- Contador -->
+    <hr class="hr my" />
+    <div class="container">
+      <h3>Contador: <span id="resultado">-</span></h3>
+
+      <div class="btns">
+        <button class="btn-aumentar">Aumentar</button>
+        <button class="btn-disminuir">Disminuir</button>
+      </div>
+      <button class="btn-reset">Resetear</button>
+    </div>
+    <!-- scripts -->
+    <script src="./main.js"></script>
+  </body>
+</html>
