@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hola</h1>
+    <ul id="lista">
+      <!-- aca va a ir los elementos -->
+    </ul>
+  </body>
+  <script>
+    // Guardamos la lista, donde vamos a incorporar los li
+    const lista = document.getElementById('lista');
+    // creamos los elementos li
+    const li = document.createElement('li');
+    // Agregamos texto al li
+    li.textContent = 'Creamos un li desde js';
+    // Finalmente lo agregamos al ul
+    lista.appendChild(li);
+  </script>
+</html>
