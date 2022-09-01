@@ -3,7 +3,12 @@ const cardsContainer = document.getElementById('cards-container');
 const form = document.getElementById('form');
 
 // Definimos la agenda
-let agenda = [];
+let agenda = JSON.parse(localStorage.getItem('agenda')) || [];
+
+// TODO: Hacer funcion para el localStorage
+const saveLocalStorage = () => {
+  localStorage.setItem('agenda', JSON.stringify(agenda));
+};
 
 // Funcion que nos va a devolver la agenda en su estado actual sumando el nuevo turno cargado.
 const saveData = () => {
@@ -63,6 +68,23 @@ const renderAgenda = () => {
   cardsContainer.innerHTML = agenda.map(turn => renderTurn(turn)).join('');
 };
 
+// Funcion para el submit del form
+const submitForm = e => {
+  e.preventDefault();
+  if (isValidForm()) {
+    saveData();
+    alert('El turno se ha cargado correctamente');
+    form.reset();
+    saveLocalStorage();
+    renderAgenda();
+    setDateIntervals();
+  }
+};
+
 // Funcion para colocar los listener y estar mas organizados
-const init = () => {};
+const init = () => {
+  renderAgenda();
+  window.addEventListener('DOMContentLoaded', setDateIntervals);
+  form.addEventListener('submit', submitForm);
+};
 init();

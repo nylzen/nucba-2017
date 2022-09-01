@@ -72,3 +72,79 @@ const setCardImgClass = quantity => {
     ? 'laptop-img'
     : 'lupa-img';
 };
+
+// Manejo de fechas
+const getNextDay = () => {
+  let tomorrow = new Date();
+  // console.log(tomorrow);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  // console.log(tomorrow);
+  return tomorrow;
+};
+
+// Funcion para formatear el numero de fecha
+const padTo2Digits = num => {
+  return num.toString().padStart(2, '0');
+};
+
+// Funcion para que en base a una fecha obtengamos un año, mes y dia y retornemos la fecha en el formato que necesitemos
+const getTomorrowDate = () => {
+  let year = getNextDay().getFullYear();
+  // console.log(year);
+  let day = getNextDay().getDate();
+  // console.log(day);
+  let month = getNextDay().getMonth() + 1;
+  // console.log(month);
+  return `${year}-${padTo2Digits(month)}-${padTo2Digits(day)}`;
+};
+
+const setDateIntervals = () => {
+  dateInput.value = getTomorrowDate();
+  dateInput.min = getTomorrowDate();
+  dateInput.max = getNextDay().getFullYear() + '-12-31';
+};
+
+// Checkeamos las validaciones
+// Funcion para checkear si el campo esta vacio
+const isEmpty = value => !value.length;
+
+// Checkeamos si el email es valido
+const isEmailValid = email => {
+  const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+  // Testeamos
+  return re.test(email);
+};
+
+// Checkeamos si el telefono es valido (10 numeros) Va a aceptar celulares
+const isPhoneValid = phone => {
+  const re = /^[0-9]{10}$/;
+  // Testeamos
+  return re.test(phone);
+};
+
+// Checkeamos si la fecha dada por el input es valida
+// 1. Creamos una variable con la fecha actual en el formato por defecto del objeto Date
+// 2.Creamos otra variable en la que transformamos la fecha dada por el input en una formateada por el objeto de JS
+const isValidDate = date => {
+  const currentDate = new Date();
+  const turnDate = new Date(date);
+  // console.log(currentDate);
+  return date.length && currentDate < turnDate; // true o false
+};
+
+// Funciones de manejo de errores
+// Funcion para mostrar error
+const showError = (input, message) => {
+  const formField = input.parentElement;
+  formField.classList.add('error');
+  const error = formField.querySelector('small');
+  error.textContent = message;
+};
+
+// Funcion para borrar el error
+const clearError = input => {
+  const formField = input.parentElement;
+  formField.classList.remove('error');
+  const error = formField.querySelector('small');
+  error.textContent = '';
+};

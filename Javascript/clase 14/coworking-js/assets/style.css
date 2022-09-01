@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@
 body {
   background-color: #000;
   color: white;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 :root {
@@ -109,11 +109,11 @@ body {
   padding: 7px 0;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
-input[type="time"],
-input[type="tel"] {
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='time'],
+input[type='tel'] {
   border: 1px solid var(--white);
   background-color: transparent;
   border-radius: 5px;
@@ -136,7 +136,7 @@ input[type="tel"] {
   color: var(--gray);
 }
 
-button[type="submit"] {
+button[type='submit'] {
   background-color: var(--primary);
   border: none;
   outline: none;
@@ -155,7 +155,7 @@ button[type="submit"] {
   gap: 12px;
 }
 
-[type="checkbox"] {
+[type='checkbox'] {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--white);
@@ -166,16 +166,16 @@ button[type="submit"] {
   place-content: center;
 }
 
-[type="checkbox"]::before {
-  content: "";
+[type='checkbox']::before {
+  content: '';
   width: 20px;
   height: 20px;
   border-radius: 3px;
   transition: all 0.1s ease-in-out;
 }
 
-[type="checkbox"]:checked::before {
-  content: "\f00c";
+[type='checkbox']:checked::before {
+  content: '\f00c';
   color: var(--white);
   text-align: center;
   font-family: FontAwesome;
@@ -284,5 +284,6 @@ input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+  box-shadow: 0 0 0 1000px #000 inset !important;
   -webkit-text-fill-color: #6b7280 !important;
 }
