@@ -4,7 +4,7 @@ const requestCoins = async value => {
   const json = await response.json();
   //   console.log(json);
   const data = json.data;
-  //   console.log(data);
+  // console.log(data);
 
   const results = value
     ? divideArray(

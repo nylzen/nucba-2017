@@ -91,19 +91,19 @@ const init = () => {
 
   window.addEventListener('scroll', async () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-    // console.log(scrollHeight);
+    // console.log(clientHeight);
 
     const bottom = scrollTop + clientHeight >= scrollHeight - 1;
 
     if (bottom && !isFetching) {
       isFetching = true;
-      console.log('llamando a la api');
+      // console.log('llamando a la api');
       const nextPokemons = await fetch(nextURL.next);
       const { next, results } = await nextPokemons.json();
       nextURL.next = next;
 
       const URLS = results.map(pokemon => pokemon.url);
-      console.log(URLS);
+      // console.log(URLS);
 
       const infoPokemons = await Promise.all(
         URLS.map(async url => {
