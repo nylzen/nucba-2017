@@ -1,28 +1,39 @@
 import React from 'react';
-import axios from 'axios';
-import { useQuery } from 'react-query';
+import { useBandsData } from '../../hooks/useBandsData';
 
 import Card from '../../components/card/Card';
 import Loader from '../../components/loader/Loader';
 
-import { BandsContainerStyled, BandsErrorMessageStyled } from './BandsStyles';
-
-const fetchBands = () => {
-  return axios.get('http://localhost:3006/bandas');
-};
+import {
+  BandsContainerStyled,
+  // BandsDisabledMessageStyled,
+  BandsErrorMessageStyled,
+} from './BandsStyles';
+// import { Box, Button } from '@mui/material';
 
 const Bands = () => {
-  const { isLoading, data, isError, error } = useQuery('bands', fetchBands, {
-    staleTime: 3000,
-    cacheTime: 5000,
-  });
-
+  const { data, isLoading, isError, error } = useBandsData();
   return (
     <>
       {isLoading && <Loader />}
       {isError && (
         <BandsErrorMessageStyled>{error.message}</BandsErrorMessageStyled>
       )}
+
+      {/* {isIdle && (
+        <Box sx={{ width: '100%', textAlign: 'center' }}>
+          <BandsDisabledMessageStyled>
+            Consulta Deshabilitada
+          </BandsDisabledMessageStyled>
+          <Button
+            sx={{ backgroundColor: '#4c1d95' }}
+            variant='contained'
+            onClick={refetch}
+          >
+            Activar
+          </Button>
+        </Box>
+      )} */}
 
       {data && (
         <BandsContainerStyled>

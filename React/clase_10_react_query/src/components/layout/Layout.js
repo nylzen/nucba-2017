@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <div>{children}</div>
       <h2 style={{ color: 'white', textAlign: 'center', marginTop: '30rem' }}>
-        HOLA SOY UN Footer
+        Nucba 2022
       </h2>
     </>
   );

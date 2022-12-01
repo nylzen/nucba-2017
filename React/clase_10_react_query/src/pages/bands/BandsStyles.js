@@ -14,3 +14,8 @@ export const BandsErrorMessageStyled = styled.h2`
   color: red;
   text-align: center;
 `;
+
+export const BandsDisabledMessageStyled = styled.h2`
+  color: white;
+  text-align: center;
+`;
