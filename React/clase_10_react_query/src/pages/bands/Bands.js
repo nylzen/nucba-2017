@@ -4,6 +4,7 @@ import { useBandsData } from '../../hooks/useBandsData';
 import Card from '../../components/card/Card';
 import Loader from '../../components/loader/Loader';
 
+import FormModal from '../../components/modal/FormModal';
 import {
   BandsContainerStyled,
   // BandsDisabledMessageStyled,
@@ -40,6 +41,7 @@ const Bands = () => {
           {data.data.map(band => (
             <Card key={band.id} {...band} />
           ))}
+          <FormModal />
         </BandsContainerStyled>
       )}
     </>

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const CardContainerStyled = styled.div`
   display: flex;
@@ -38,4 +38,10 @@ export const CardDescriptionStyled = styled.p`
 export const LinkStyled = styled(Link)`
   text-decoration: none;
   color: white;
+`;
+
+export const ButtonsContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;

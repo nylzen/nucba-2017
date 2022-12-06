@@ -1,17 +1,18 @@
 import React from 'react';
 
-import BandPhoto from '../bandPhoto/BandPhoto';
 import BandButton from '../bandButton/BandButton';
+import BandPhoto from '../bandPhoto/BandPhoto';
 
+import { useLocation } from 'react-router-dom';
+import CardFooter from '../cardFooter/CardFooter';
 import {
+  ButtonsContainerStyled,
   CardContainerStyled,
   CardContentContainerStyled,
   CardDescriptionStyled,
   CardTitleStyled,
   LinkStyled,
 } from './CardStyles';
-import { useLocation } from 'react-router-dom';
-import CardFooter from '../cardFooter/CardFooter';
 
 const Card = props => {
   const { pathname } = useLocation();
@@ -35,7 +36,10 @@ const Card = props => {
         </CardDescriptionStyled>
       </CardContentContainerStyled>
 
-      <BandButton genre={genre} />
+      <ButtonsContainerStyled>
+        <BandButton genre={genre} />
+        <BandButton id={id} deleteButton />
+      </ButtonsContainerStyled>
       {!pathname.match(/bands/i) && <CardFooter lastSong={lastSong} />}
     </CardContainerStyled>
   );
