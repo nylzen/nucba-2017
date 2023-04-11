@@ -270,4 +270,4 @@ export const Products = products.reduce((acc, product) => {
 }, {});
 
 // console.log(Object.entries(Products));
-console.log(Products);
+// console.log(Products);
