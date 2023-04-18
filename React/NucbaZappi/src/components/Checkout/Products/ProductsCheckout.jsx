@@ -1,40 +1,50 @@
 import React from 'react';
 import { formatPrice } from '../../../utils';
+import Link from '../../UI/Link/Link';
 
 import CardProductCheckout from '../../CardProductCheckout/CardProductCheckout';
 
 import {
-  ProductosContainerStyled,
-  ProductsTitleStyled,
   CardsWrapperStyled,
-  PriceContainerStyled,
-  SubtotalStyled,
   EnvioStyled,
   HrStyled,
-  TotalStyled,
+  PriceContainerStyled,
   PriceTotalStyled,
+  ProductosContainerStyled,
+  ProductsTitleStyled,
+  SubtotalStyled,
+  TotalStyled,
 } from './ProductsCheckoutStyles';
 
-const ProductsCheckout = () => {
+const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
   return (
     <ProductosContainerStyled>
       <ProductsTitleStyled>Tu pedido</ProductsTitleStyled>
       <CardsWrapperStyled>
-        <CardProductCheckout />
+        {cartItems.length ? (
+          cartItems.map(item => <CardProductCheckout key={item.id} {...item} />)
+        ) : (
+          <>
+            <p>No hay productos en el carrito</p>
+            <Link />
+          </>
+        )}
       </CardsWrapperStyled>
       <PriceContainerStyled>
         <SubtotalStyled>
           <p>Subtotal</p>
-          <span>{formatPrice(9000)}</span>
+          <span>{formatPrice(price)}</span>
         </SubtotalStyled>
         <EnvioStyled>
           <p>Envío:</p>
-          <span>{formatPrice(500)}</span>
+          <span>{formatPrice(shippingCost)}</span>
         </EnvioStyled>
         <HrStyled />
         <TotalStyled>
           <p>Total:</p>
-          <PriceTotalStyled>{formatPrice(9000 + 500)}</PriceTotalStyled>
+          <PriceTotalStyled>
+            {formatPrice(price + shippingCost)}
+          </PriceTotalStyled>
         </TotalStyled>
       </PriceContainerStyled>
     </ProductosContainerStyled>

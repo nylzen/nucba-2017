@@ -7,36 +7,40 @@ import { FaMinus } from 'react-icons/fa';
 import Count from '../../UI/Count/Count';
 import Increase from '../../UI/Increase/Increase';
 
+import { IoMdTrash } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../../redux/cart/cartSlice';
 import {
-  ProductContainerStyled,
-  TextContainerStyled,
   CardTitleStyled,
-  TextStyled,
   PriceStyled,
+  ProductContainerStyled,
   QuantityContainerStyled,
+  TextContainerStyled,
+  TextStyled,
 } from './ModalCartStyles';
 
-const ModalCartCard = () => {
+const ModalCartCard = ({ id, img, title, desc, price, quantity }) => {
+  const dispatch = useDispatch();
+
   return (
     <ProductContainerStyled>
-      <img
-        src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png'
-        alt='La Aco'
-      />
+      <img src={img} alt={title} />
       <TextContainerStyled>
-        <CardTitleStyled>La Aco</CardTitleStyled>
-        <TextStyled>Cheta la gorra</TextStyled>
-        <PriceStyled>{formatPrice(3000)}</PriceStyled>
+        <CardTitleStyled>{title}</CardTitleStyled>
+        <TextStyled>{desc}</TextStyled>
+        <PriceStyled>{formatPrice(price)}</PriceStyled>
       </TextContainerStyled>
       <QuantityContainerStyled>
         <Increase
           bgColor='var(--btn-gradient-secondary)'
-          onClick={e => e.preventDefault()}
+          onClick={() => dispatch(removeFromCart(id))}
         >
-          <FaMinus />
+          {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
         </Increase>
-        <Count>3</Count>
-        <Increase onClick={e => e.preventDefault()}>
+        <Count>{quantity}</Count>
+        <Increase
+          onClick={() => dispatch(addToCart({ img, title, desc, price, id }))}
+        >
           <BsPlusLg />
         </Increase>
       </QuantityContainerStyled>
