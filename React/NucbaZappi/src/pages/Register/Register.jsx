@@ -1,42 +1,50 @@
-import React from 'react';
 import { Formik } from 'formik';
+import React from 'react';
 
 import LoginInput from '../../components/UI/LoginInput/LoginInput';
 import Submit from '../../components/UI/Submit/Submit';
 
-import {
-  Form,
-  LoginButtonGoogleStyled,
-  LoginContainerStyled,
-  LoginEmailStyled,
-} from './RegisterStyles';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../axios/axios-user';
+import { registerInitialValues, registerValidationSchema } from '../../formik';
+import { setCurrentUser } from '../../redux/user/userSlice';
+import { Form, LoginContainerStyled, LoginEmailStyled } from './RegisterStyles';
 
 const Register = () => {
+  const dispatch = useDispatch();
   return (
     <LoginContainerStyled>
       <h1>Crea tu cuenta</h1>
-      <Formik>
+      <Formik
+        initialValues={registerInitialValues}
+        validationSchema={registerValidationSchema}
+        onSubmit={async (values, actions) => {
+          const user = await createUser(
+            values.name,
+            values.email,
+            values.password
+          );
+          actions.resetForm();
+
+          if (user) {
+            dispatch(
+              setCurrentUser({
+                ...user.usuario,
+                token: user.token,
+              })
+            );
+          }
+        }}
+      >
         <Form>
-          <LoginInput type='text' placeholder='Nombre' />
-          <LoginInput type='text' placeholder='Email' />
-          <LoginInput type='password' placeholder='Password' />
-          <p>O podés ingresar con</p>
-          <LoginButtonGoogleStyled
-            type='button'
-            onClick={e => e.preventDefault()}
-          >
-            <img
-              src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648432/coding/NucbaZappi/Assets/google-icon_jgdcr1.png'
-              alt='Google logo'
-            />
-            Google
-          </LoginButtonGoogleStyled>
+          <LoginInput type='text' placeholder='Nombre' name='name' />
+          <LoginInput type='text' placeholder='Email' name='email' />
+          <LoginInput type='password' placeholder='Password' name='password' />
+
           <LoginEmailStyled to='/login'>
             <p>¿Ya tenes cuenta? Inicia sesión</p>
           </LoginEmailStyled>
-          <Submit type='button' onClick={e => e.preventDefault()}>
-            Registrarte
-          </Submit>
+          <Submit>Registrarte</Submit>
         </Form>
       </Formik>
     </LoginContainerStyled>

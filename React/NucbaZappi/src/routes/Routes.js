@@ -1,14 +1,15 @@
 import { Routes as ReactDomRoutes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home/Home';
-import Felicitaciones from '../pages/Felicitaciones/Felicitaciones';
-import Resumen from '../pages/Resumen/Resumen';
-import Login from '../pages/Login/Login';
-import Register from '../pages/Register/Register';
+import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
 import Checkout from '../pages/Checkout/Checkout';
+import Felicitaciones from '../pages/Felicitaciones/Felicitaciones';
+import ForgotPassword from '../pages/ForgotPassword/ForgotPassword';
+import Home from '../pages/Home/Home';
+import Login from '../pages/Login/Login';
 import MisOrdenes from '../pages/MisOrdenes/MisOrdenes';
 import PageNotFound from '../pages/PageNotFound/PageNotFound';
-import ForgotPassword from '../pages/ForgotPassword/ForgotPassword';
+import Register from '../pages/Register/Register';
+import Resumen from '../pages/Resumen/Resumen';
 
 function Routes() {
   return (
@@ -21,7 +22,14 @@ function Routes() {
       <Route path='/felicitaciones' element={<Felicitaciones />} />
       <Route path='/resumen/:orderId' element={<Resumen />} />
 
-      <Route path='/checkout' element={<Checkout />} />
+      <Route
+        path='/checkout'
+        element={
+          <ProtectedRoute redirectTo='/register'>
+            <Checkout />
+          </ProtectedRoute>
+        }
+      />
 
       <Route path='*' element={<PageNotFound />} />
     </ReactDomRoutes>
