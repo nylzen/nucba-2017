@@ -19,8 +19,6 @@ const Hero = ({ doScroll }) => {
     state => state.categories.categories
   ).map(category => category.category);
 
-  // console.log(value);
-
   const dispatch = useDispatch();
 
   const handlerSubmit = (e, value) => {

@@ -5,13 +5,19 @@ import LoginInput from '../../components/UI/LoginInput/LoginInput';
 import Submit from '../../components/UI/Submit/Submit';
 
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { createUser } from '../../axios/axios-user';
 import { registerInitialValues, registerValidationSchema } from '../../formik';
+import useRedirect from '../../hooks/useRedirect';
 import { setCurrentUser } from '../../redux/user/userSlice';
 import { Form, LoginContainerStyled, LoginEmailStyled } from './RegisterStyles';
 
 const Register = () => {
+  const { state } = useLocation();
   const dispatch = useDispatch();
+
+  useRedirect(state?.redirectedFromCheckout ? '/checkout' : '/');
+
   return (
     <LoginContainerStyled>
       <h1>Crea tu cuenta</h1>
@@ -24,7 +30,6 @@ const Register = () => {
             values.email,
             values.password
           );
-          actions.resetForm();
 
           if (user) {
             dispatch(
@@ -34,6 +39,7 @@ const Register = () => {
               })
             );
           }
+          actions.resetForm();
         }}
       >
         <Form>

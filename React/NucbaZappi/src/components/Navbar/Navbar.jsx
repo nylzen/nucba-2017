@@ -56,7 +56,7 @@ function Navbar() {
         <UserNavStyled>
           <UserContainerStyled
             onClick={() =>
-              currentUser ? dispatch(toggleMenuHidden) : navigate('/register')
+              currentUser ? dispatch(toggleMenuHidden()) : navigate('/register')
             }
           >
             <SpanStyled>

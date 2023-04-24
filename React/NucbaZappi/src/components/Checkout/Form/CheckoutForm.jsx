@@ -16,12 +16,13 @@ const CheckoutForm = ({ cartItems }) => {
       <Formik
         initialValues={checkoutInitialValues}
         validationSchema={checkoutValidationSchema}
-        onSubmit={values =>
+        onSubmit={(values, actions) => {
           console.log({
             items: cartItems,
             shippingDetails: { ...values },
-          })
-        }
+          });
+          actions.resetForm();
+        }}
       >
         <Form>
           <Input

@@ -28,7 +28,7 @@ const ModalUser = () => {
           transition={{ duration: 0.5 }}
           key='cart-user'
         >
-          <UsernameStyled>{currentUser}</UsernameStyled>
+          <UsernameStyled>{`Hola ${currentUser?.nombre}!!`}</UsernameStyled>
           <HrStyled />
           <LinkStyled to='/mis-ordenes'>Mis Ordenes</LinkStyled>
           <span
