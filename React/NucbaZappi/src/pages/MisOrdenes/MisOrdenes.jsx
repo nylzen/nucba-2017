@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../../components/UI/Button/Button';
 import CardsMisOrdenes from '../../components/MisOrdenes/CardsMisOrdenes';
+import Button from '../../components/UI/Button/Button';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getOrders } from '../../axios/axios-orders';
+import { clearError, fetchOrdersFail } from '../../redux/orders/ordersSlice';
 import {
   MisOrdenesBtnContainerStyled,
   MisOrdenesContainerStyled,
@@ -13,6 +16,25 @@ import {
 
 const MisOrdenes = () => {
   const navigate = useNavigate();
+  const currentUser = useSelector(state => state.user.currentUser);
+  const { orders, error } = useSelector(state => state.orders);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!orders) {
+      getOrders(dispatch, currentUser);
+    }
+
+    if (!currentUser?.token) {
+      dispatch(
+        fetchOrdersFail(
+          'Upss, algo salio mal. No hay ordenes sin usuario. Es como querer jugar al futbol sin pelota.'
+        )
+      );
+    } else {
+      error && dispatch(clearError());
+    }
+  }, [dispatch, currentUser?.token, orders, error]);
 
   return (
     <>
