@@ -18,22 +18,22 @@ import {
   ResumenTitleStyled,
 } from './ResumenStyles';
 
-const Resumen = () => {
+const Resumen = ({ imagen }) => {
   const currentUser = useSelector(state => state.user.currentUser);
   const orders = useSelector(state => state.orders.orders);
   const dispatch = useDispatch();
   const { orderId } = useParams();
+  console.log(orderId);
 
   const [visitedOrder, setVisitedOrder] = useState(null);
 
   useEffect(() => {
     if (!orders) {
-      dispatch(getOrders(dispatch, currentUser?.token));
+      getOrders(dispatch, currentUser);
     }
 
     setVisitedOrder(orders?.find(order => order._id === orderId));
-    console.log(visitedOrder);
-  }, [orderId, currentUser?.id, orders, dispatch]);
+  }, [orderId, currentUser, orders]);
 
   return (
     <ResumenContainerStyled>
@@ -43,7 +43,9 @@ const Resumen = () => {
       </ResumenTitleStyled>
       <h2>Productos:</h2>
       <ProductsContainerStyled>
-        <CardResumen />
+        {visitedOrder?.items.map(item => (
+          <CardResumen key={item._id} {...item} />
+        ))}
       </ProductsContainerStyled>
       <HrStyled />
       <ResumenContainerInfoStyled>
@@ -54,11 +56,11 @@ const Resumen = () => {
         </CostoProductoStyled>
         <CostoEnvioStyled>
           <p>Costo de envío</p>
-          <span>{formatPrice(500)}</span>
+          <span>{formatPrice(visitedOrder?.price)}</span>
         </CostoEnvioStyled>
         <CostoTotalStyled>
           <p>Total</p>
-          <span>{formatPrice(3000)}</span>
+          <span>{formatPrice(visitedOrder?.total)}</span>
         </CostoTotalStyled>
       </ResumenContainerInfoStyled>
     </ResumenContainerStyled>

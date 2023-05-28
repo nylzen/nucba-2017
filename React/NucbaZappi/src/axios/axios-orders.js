@@ -8,8 +8,7 @@ import {
 import { BASE_URL } from '../utils/constants';
 
 export const getOrders = async (dispatch, currentUser) => {
-  dispatch(fetchOrdersStart());
-
+  dispatch(fetchOrdersStart())
   try {
     const orders = await axios.get(`${BASE_URL}/orders`, {
       headers: {
